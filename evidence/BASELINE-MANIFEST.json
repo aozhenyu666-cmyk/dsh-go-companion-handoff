@@ -1,0 +1,92 @@
+{
+ "createdAt": "2026-11-02T14:31:51.953Z",
+ "dshVersion": "0.2.1-rc.2",
+ "node": "24.21.0",
+ "cordis": "~4.0.5",
+ "files": [
+  {
+   "name": "speak-up-config.json",
+   "src": "C:\\Users\\敖震宇\\.dsh\\speak-up-config.json",
+   "bytes": 497,
+   "sha256": "7e6129f83a2781595ae70144ca3e86eccc25c1a3b334840e2c9d86d62d9ea426"
+  },
+  {
+   "name": "qq-bridge-config.json",
+   "src": "C:\\Users\\敖震宇\\.dsh\\qq-bridge-config.json",
+   "bytes": 4696,
+   "sha256": "eed7cde24b41bee2c4db11b55caf4aa1d373a1da499a47f48ba6eb6d3d78b9af"
+  },
+  {
+   "name": "qq-bridge-state.json",
+   "src": "C:\\Users\\敖震宇\\.dsh\\qq-bridge-state.json",
+   "bytes": 73,
+   "sha256": "e77e30d06999ca5ec915247eb1bab40acf9d7a7567a2e5649690712e264e3fde"
+  },
+  {
+   "name": "fish-memory-config.json",
+   "src": "C:\\Users\\敖震宇\\.dsh\\fish-memory-config.json",
+   "bytes": 70,
+   "sha256": "c955e70214639c6726109b6b0ecf2b7f51e0941d5eb1b9e8b67be271a7c5f138"
+  },
+  {
+   "name": "feiyu-mood-config.json",
+   "src": "C:\\Users\\敖震宇\\.dsh\\feiyu-mood\\config.json",
+   "bytes": 673,
+   "sha256": "062a39e619ef12ea682d7b6a11a222419d287e226863d0069839fa43722fc193"
+  },
+  {
+   "name": "feiyu-mood-state.json",
+   "src": "C:\\Users\\敖震宇\\.dsh\\feiyu-mood\\state.json",
+   "bytes": 589,
+   "sha256": "82a92e47894c50872962977c5e37505206e6231ca3dc65527610c8f215631838"
+  },
+  {
+   "name": "dsh-pet-main-config.jsonc",
+   "src": "C:\\Users\\敖震宇\\.dsh\\dsh-pet\\main-config.jsonc",
+   "bytes": 354,
+   "sha256": "051c1d264277fb15550a65a638ab670a745399486a63ac8db4142ee915b7a000"
+  },
+  {
+   "name": "surfcore-config.json",
+   "src": "C:\\Users\\敖震宇\\.dsh\\surfcore\\config.json",
+   "bytes": 173,
+   "sha256": "6174a5e40bff3f8118b6143342ada9dd5de6810b19624cbea1c3785425d94755"
+  },
+  {
+   "name": "profile-desktop-package.json",
+   "src": "C:\\Users\\敖震宇\\.dsh\\profiles\\desktop\\package.json",
+   "bytes": 2870,
+   "sha256": "0dd8f11d5a091049dcabcc769e26d5e38e7f24b430d6a01e792e5770ad3e34d7"
+  },
+  {
+   "name": "profile-desktop-cordis.patch.yml",
+   "src": "C:\\Users\\敖震宇\\.dsh\\profiles\\desktop\\cordis.patch.yml",
+   "bytes": 3413,
+   "sha256": "7690db14d03de9209d16d1287ce334d661df28e2ffc79f188df2c01ec7160ed8"
+  },
+  {
+   "name": "profile-desktop-cordis.yml",
+   "src": "C:\\Users\\敖震宇\\.dsh\\profiles\\desktop\\cordis.yml",
+   "bytes": 223,
+   "sha256": "c300dcf2ebc5f02062d6591268d29d3db6fe45e0cb138f5467276fe2ba06076e"
+  },
+  {
+   "name": "profile-desktop-pnpm-lock.yaml",
+   "src": "C:\\Users\\敖震宇\\.dsh\\profiles\\desktop\\pnpm-lock.yaml",
+   "bytes": 86596,
+   "sha256": "e75403006523b1986d14b6f9b8503339a5ef990623bff60fd059670d4707b97b"
+  }
+ ],
+ "fishMemory": [
+  {
+   "f": "session-2c93cd4f-6a81-4f60-9edd-adbfbef90b5f.json",
+   "bytes": 47428,
+   "sha256": "3372176233a13fa47f9033b286f6ad9e9229f62577b33d69db7eee6cd3359c64"
+  },
+  {
+   "f": "session-2c93cd4f-6a81-4f60-9edd-adbfbef90b5f.json.bak",
+   "bytes": 2416,
+   "sha256": "e932386dc2c33a23ce889cf53fffdc15fd7b24d5d643855ca4c0832902b26c89"
+  }
+ ]
+}
