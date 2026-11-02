@@ -1335,14 +1335,14 @@ fun moodBand(mood: Int) = when {
 
 ```powershell
 # 通过本机代理 7897 克隆（直连 github 超时：curl 28 / Recv failure）
-git -c http.proxy=http://127.0.0.1:7897 clone --filter=blob:none --sparse --depth 1 ^
+git -c http.proxy=http://127.0.0.1:<proxy> clone --filter=blob:none --sparse --depth 1 ^
     https://github.com/zhu1090093659/dsh-pet.git repos/dsh-pet
-git -c http.proxy=http://127.0.0.1:7897 sparse-checkout set src contracts shared scripts tests docs .agents
-git -c http.proxy=http://127.0.0.1:7897 sparse-checkout add assets/whale assets/whale-refined assets/decorations
+git -c http.proxy=http://127.0.0.1:<proxy> sparse-checkout set src contracts shared scripts tests docs .agents
+git -c http.proxy=http://127.0.0.1:<proxy> sparse-checkout add assets/whale assets/whale-refined assets/decorations
 
 # 元数据 + 全量树（算体积 / 找 model3.json）
-curl --proxy http://127.0.0.1:7897 https://api.github.com/repos/zhu1090093659/dsh-pet
-curl --proxy http://127.0.0.1:7897 "https://api.github.com/repos/zhu1090093659/dsh-pet/git/trees/main?recursive=1"
+curl --proxy http://127.0.0.1:<proxy> https://api.github.com/repos/zhu1090093659/dsh-pet
+curl --proxy http://127.0.0.1:<proxy> "https://api.github.com/repos/zhu1090093659/dsh-pet/git/trees/main?recursive=1"
 ```
 
 ## 附录 B · `src/` 逐文件行数（非测试）

@@ -180,7 +180,7 @@ autoArchiveCheckMin: 60,
 
 ## B. fish-memory 1.4.3 对照（本地文件直读）
 
-源码：`C:\Users\敖震宇\.dsh\profiles\desktop\node_modules\dsh-fish-memory\lib\index.js`（**6501 行**）。
+源码：`C:\Users\<user>\.dsh\profiles\desktop\node_modules\dsh-fish-memory\lib\index.js`（**6501 行**）。
 
 ### B.1 数据模型（读 `~/.dsh/fish-memory/session-2c93cd4f-….json`，45748 字节）
 
@@ -747,7 +747,7 @@ _cache/clinic_run/         ← doctor.mjs + package.json + lib/*.mjs（18 文件
 **① 静态 R+K（对已装的 fish-memory）**
 ```powershell
 node C:\...\_cache\clinic_run\doctor.mjs `
-  --repo "C:\Users\敖震宇\.dsh\profiles\desktop\node_modules\dsh-fish-memory" `
+  --repo "C:\Users\<user>\.dsh\profiles\desktop\node_modules\dsh-fish-memory" `
   --no-smoke --only R,K --format check
 ```
 实测：**exit 1**，R0 PASS / R1 PASS / R2 **FAIL（`npm` 不在 PATH）** / R3 PASS / R4 PASS / R5 WARN(skip) / R6 WARN（未声明 `engines.node`）/ R7 PASS / R8 PASS / **K1 WARN（`ctx.interval` 1 处未 inject）** / K3 WARN（client.js 5 处裸 setTimeout）/ K14 WARN(skip) / 其余 PASS。

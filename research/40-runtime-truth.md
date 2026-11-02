@@ -41,7 +41,7 @@
 
 | 类型 | 路径 | 说明 |
 |---|---|---|
-| Electron userData | `C:\Users\敖震宇\AppData\Roaming\@deepseek-ai\dsh-desktop\` | Chromium profile + 崩溃日志 |
+| Electron userData | `C:\Users\<user>\AppData\Roaming\@deepseek-ai\dsh-desktop\` | Chromium profile + 崩溃日志 |
 | **主进程/宿主崩溃日志** | 同上 `logs\crash-<时间>-main.log` / `-host.log` / `-web-boot.log` | **只有崩溃/致命错误时才写，不是常规运行日志** |
 | 现有全部崩溃日志 | 共 7 个，最新 `crash-2026-10-31T21-20-50-079Z-host.log`（6669 B） | 见 1.3 |
 | 插件自写诊断 | `~/.dsh/fish-memory-diag.log`(244 KB)、`~/.dsh/feiyu-mood/diag.log`(4.6 KB)、`~/.dsh/surfcore/plugin.log`、`~/.dsh/bili-duty/duty.log` | **插件加载成功/失败的唯一可查证据就在这里** |
@@ -238,7 +238,7 @@ turn/end   turn 23 reason:{"kind":"error","error":{"message":"Cannot read proper
 ```
 （`~/.dsh/sessions/…/session-429facb2-…`，解压后 288 事件；**30 轮里 6 轮是这个错**：turn 4/8/9/11/13/23）
 
-这个错误串 `Cannot read properties of undefined (reading 'prepare')` 在 `profiles/desktop/pnpm-workspace.yaml` 的注释里被点名：`@maci0/dsh-caveman` 把 `@deepseek-ai/dsh-tools` 复制出第二份 → 两份各自 Symbol 不相等 → `dsh-agent-loop` 取 `ctx.tools[该 Symbol]` 得 undefined → 工具调用抛 `…reading 'prepare'`。修法是 `overrides: '@deepseek-ai/dsh-tools': 'file:C:/Users/敖震宇/.dsh/shims/dsh-tools'`，该 shim 的 mtime 是 **2026-10-30T15:54:37**，晚于 429 最后一次活动（06:12）。→ 今天新会话（`session-dd762176`，22 轮、1320 次 tool/call）**0 次该错误**。**即：这个故障大概已被 shim 修掉，但我只拿到"之后两天没复现"，不等于验证通过。**
+这个错误串 `Cannot read properties of undefined (reading 'prepare')` 在 `profiles/desktop/pnpm-workspace.yaml` 的注释里被点名：`@maci0/dsh-caveman` 把 `@deepseek-ai/dsh-tools` 复制出第二份 → 两份各自 Symbol 不相等 → `dsh-agent-loop` 取 `ctx.tools[该 Symbol]` 得 undefined → 工具调用抛 `…reading 'prepare'`。修法是 `overrides: '@deepseek-ai/dsh-tools': 'file:C:/Users/<user>/.dsh/shims/dsh-tools'`，该 shim 的 mtime 是 **2026-10-30T15:54:37**，晚于 429 最后一次活动（06:12）。→ 今天新会话（`session-dd762176`，22 轮、1320 次 tool/call）**0 次该错误**。**即：这个故障大概已被 shim 修掉，但我只拿到"之后两天没复现"，不等于验证通过。**
 
 ### 3.6 大肥鱼会话（session-429facb2）的记忆实况 = 死的
 
@@ -496,7 +496,7 @@ ctx.interval(cb, 10min)                       L802  ← ① 定时器
 
 ---
 
-## 7. dsh-feiyu-app（本地 0.1.0，link: C:/Users/敖震宇/feiyu/plugin）
+## 7. dsh-feiyu-app（本地 0.1.0，link: C:/Users/<user>/feiyu/plugin）
 
 源码：`~/.dsh/profiles/desktop/node_modules/dsh-feiyu-app/index.mjs`（240 行 / 8.7 KB）
 包声明：`dsh.bundle.patch: ./cordis.patch.yml` → `- insert: [{id: feiyu-app, name: dsh-feiyu-app}]`；`inject = ['webServer']`
@@ -665,7 +665,7 @@ GET /dsh-surfcore/pet-api/purpose/status
 | 文件内容含 `companion`（`dsh-go-handoff` 全树） | 同上 | **0** |
 | npm 全局 | `%APPDATA%\npm\node_modules` 不存在；`%LOCALAPPDATA%\pnpm` 只有 `store` | 无 |
 | `~/.dsh/plugins` | 目录列表 | 只有 `surfcore` |
-| `C:\Users\敖震宇\dsh-plugins-staging` | 目录列表 | 9 个 tgz，**无 companion** |
+| `C:\Users\<user>\dsh-plugins-staging` | 目录列表 | 9 个 tgz，**无 companion** |
 | npm registry | `https://registry.npmjs.org/dsh-companion-loop` | **404 Not found** |
 | GitHub | `api.github.com/search/repositories?q=dsh-companion-loop` | **total_count: 0** |
 | GitHub | `api.github.com/search/repositories?q=companion-loop+deepseek-harness` | **total_count: 0** |
@@ -725,7 +725,7 @@ GET /dsh-surfcore/pet-api/purpose/status
 | 心情源码 / 状态 | `node_modules\dsh-feiyu-mood\lib\index.js`；`~/.dsh\feiyu-mood\{config.json,state.json,diag.log}` |
 | 主动发言源码 / 状态 | `node_modules\dsh-speak-up\lib\host.js`；`~/.dsh\speak-up-config.json`；`GET /dsh-speak-up/state` |
 | QQ 桥源码 / 状态 | `node_modules\dsh-qq-bridge\lib\host.js`；`~/.dsh\qq-bridge-config.json`；`GET /dsh-qq-bridge/state` |
-| 手机端后端 | `node_modules\dsh-feiyu-app\index.mjs`（源在 `C:\Users\敖震宇\feiyu\plugin`） |
+| 手机端后端 | `node_modules\dsh-feiyu-app\index.mjs`（源在 `C:\Users\<user>\feiyu\plugin`） |
 | surfcore 桌宠文档 | `~/.dsh\plugins\surfcore\docs\PET.md` |
 | 会话原文 | `~/.dsh\sessions\--C-Users-…--\<sid>\session.v4.jsonl.zstd` |
 | 本次解压样本 | `D:\code\temp\s429.jsonl`（429 会话，288 事件 / 665 KB） |

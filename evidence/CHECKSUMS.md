@@ -1,31 +1,35 @@
 # 交接包校验清单
 
-生成时间：2026-11-02 23:50 (+08:00)
-总计：**15 个文件 / 680 KB**
+生成时间：2026-11-03 (Asia/Shanghai)
+总计：**16 个文件 / 685 KB**
+
+> 发布前已做脱敏：真实姓名 → `<user>`；QQ 号 → `2079****46`；会话 ID → 保留前 8 位后打码。
+> 脱敏**不改变** `evidence/BASELINE-MANIFEST.json` 里的 SHA256——那是审计前的真实基线，可直接用于回滚校验。
 
 | 文件 | 大小 | SHA256（前 16 位） |
 |---|---|---|
-| DSH-GO-COMPANION-INTEGRATION.md | 91 KB | 3782be6662916d49… |
-| DSH-GO-PLUGIN-INVENTORY.md | 14 KB | c8a742bcd76d9640… |
-| research/00-SHARED-FACTS.md | 7 KB | a0500c7b70260192… |
-| research/05-LEAD-EVIDENCE.md | 7 KB | e8ec2ab946cd0d75… |
-| research/06-LEAD-DRAFT-ARCH.md | 12 KB | 7ecce716f1ff9058… |
+| DSH-GO-COMPANION-INTEGRATION.md | 91 KB | 0153f421150a5551… |
+| DSH-GO-PLUGIN-INVENTORY.md | 14 KB | 2e3a4b082f7fbcde… |
+| README.md | 5 KB | bd4ae485ed5bce10… |
+| research/00-SHARED-FACTS.md | 7 KB | ef23c707c89df1ed… |
+| research/05-LEAD-EVIDENCE.md | 7 KB | 8e534ec019e64442… |
+| research/06-LEAD-DRAFT-ARCH.md | 12 KB | ca8f471841879f3f… |
 | research/10-pet-and-voice.md | 66 KB | 647459c187af59e7… |
-| research/20-dsh-pet.md | 66 KB | 7fa18246a7e0a6ae… |
-| research/20-memory-scheduler-clinic.md | 70 KB | 85738c1ab59b86cb… |
-| research/21-voice-comparison.md | 77 KB | 0705c1305470eab5… |
+| research/20-dsh-pet.md | 66 KB | ec3e6f03667c0826… |
+| research/20-memory-scheduler-clinic.md | 70 KB | b4d5442610117d8a… |
+| research/21-voice-comparison.md | 77 KB | 40315a0151197324… |
 | research/30-dshgo-native.md | 64 KB | 6a35e4b2487ab9d4… |
 | research/31-dsh-go-local-source-authority.md | 129 KB | 0792434995e12513… |
-| research/40-runtime-truth.md | 55 KB | a6a6515c00e65f40… |
+| research/40-runtime-truth.md | 55 KB | b1053c9de32a118e… |
 | research/40b-capability-matrix.md | 15 KB | e3693cd400d64f78… |
-| evidence/AUDIT-RESIDUE.md | 3 KB | 095a3358cc8e7b28… |
-| evidence/BASELINE-MANIFEST.json | 3 KB | 6dbb9637063718cd… |
+| evidence/AUDIT-RESIDUE.md | 3 KB | fbff3be0ba83b321… |
+| evidence/BASELINE-MANIFEST.json | 3 KB | bd9571e3fe4594b0… |
 
 完整 SHA256：`Get-FileHash <文件> -Algorithm SHA256`
 
 ## 基线备份
 
-`C:\Users\敖震宇\.dsh\backups\dsh-ecosystem-audit-2026-11-02T2230\` — 12 个配置文件 + 2 个 fish-memory 数据文件，完整 SHA256 清单在 `evidence/BASELINE-MANIFEST.json`。
+审计前基线：12 个配置文件 + 2 个 fish-memory 数据文件，完整 SHA256 见 `evidence/BASELINE-MANIFEST.json`。
 
 ## 审计期间唯一变化的生产文件
 
@@ -34,16 +38,17 @@
 ## 目录结构
 
 ```
-dsh-go-handoff/
+dsh-go-companion-handoff/
+├── README.md                          仓库导览
 ├── DSH-GO-COMPANION-INTEGRATION.md    主交接文档（20 章 + 6 附录）
 ├── DSH-GO-PLUGIN-INVENTORY.md         插件清单（9 章）
 ├── evidence/
 │   ├── CHECKSUMS.md                   本文件
 │   ├── BASELINE-MANIFEST.json         审计前基线（完整 SHA256）
 │   └── AUDIT-RESIDUE.md               审计残留物说明
-└── research/                          11 份详细报告
+└── research/                          11 份详细报告 + 7 个仓库文件清单
 ```
 
 ## 隐私
 
-QQ 号已脱敏（`2079****46`）。全文扫描 `sk-` / Bearer / Cookie / SESSDATA / 令牌 / password **零命中**。
+全文扫描 `sk-` / Bearer / Cookie / SESSDATA / 令牌 / password / 真实姓名 / 完整会话 ID **零命中**。

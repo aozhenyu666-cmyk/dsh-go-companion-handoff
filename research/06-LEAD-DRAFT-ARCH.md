@@ -102,7 +102,7 @@ ctx.sessionController.resolveAgent(sessionId)
 
 ## 7. 移动端接入的现成通路（实测可用）[E-05]
 
-`dsh-feiyu-app@0.1.0`（`C:\Users\敖震宇\feiyu\plugin\index.mjs`，link 安装）
+`dsh-feiyu-app@0.1.0`（`C:\Users\<user>\feiyu\plugin\index.mjs`，link 安装）
 已实测在线：`GET http://127.0.0.1:57009/feiyu/ping` → `{"ok":true,"版本":"0.1.0"}`
 
 | 方法 | 路径 | 请求 | 响应 | 备注 |

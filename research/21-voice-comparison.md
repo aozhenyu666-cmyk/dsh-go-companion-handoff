@@ -1244,9 +1244,9 @@ VM 的 Electron 判定（`src/tts-runtime.ts:65-80`，原样节选）：
 ## 附录 A 命令与证据留痕
 
 ```text
-# 克隆（需走本机代理 127.0.0.1:7897；直连 GitHub 443 超时）
-git -c http.proxy=http://127.0.0.1:7897 clone --depth 1 https://github.com/qishuilalala/dsh-voice-mode.git
-git -c http.proxy=http://127.0.0.1:7897 clone --depth 1 https://github.com/PerryLink/dsh-talk.git
+# 克隆（需走本机代理 127.0.0.1:<proxy>；直连 GitHub 443 超时）
+git -c http.proxy=http://127.0.0.1:<proxy> clone --depth 1 https://github.com/qishuilalala/dsh-voice-mode.git
+git -c http.proxy=http://127.0.0.1:<proxy> clone --depth 1 https://github.com/PerryLink/dsh-talk.git
 
 # HEAD
 dsh-voice-mode  3524db40938f16e7c8f0726e30647afe5bfbef25  2026-10-31 03:33:42 +0800

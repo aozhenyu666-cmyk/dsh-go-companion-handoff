@@ -10,13 +10,13 @@
 - Cordis：@deepseek-ai/cordis ~4.0.5（来自 profile 的 pnpm-lock.yaml peer 解析）
 - @deepseek-ai/dsh-tools / dsh-llm / dsh-skill：0.2.1-rc.2
 - schemastery：3.18.5
-- 平台：win32 x64，用户名目录 C:\Users\敖震宇
-- DSH 用户目录：C:\Users\敖震宇\.dsh
-- DSH 安装目录：C:\Users\敖震宇\AppData\Local\Programs\DeepSeek Harness\resources
+- 平台：win32 x64，用户名目录 C:\Users\<user>
+- DSH 用户目录：C:\Users\<user>\.dsh
+- DSH 安装目录：C:\Users\<user>\AppData\Local\Programs\DeepSeek Harness\resources
 
 ## 2. Profile
 - 存在三个 profile：desktop（生产，正在用）、headless（空 patch）、abtest-zseven（空 patch）
-- 生产 profile 目录：C:\Users\敖震宇\.dsh\profiles\desktop
+- 生产 profile 目录：C:\Users\<user>\.dsh\profiles\desktop
 - 挂载方式：package.json 的 dsh.profile.bundles 数组 + cordis.patch.yml 配置层
 - desktop 的 bundles（31 项，顺序即加载顺序）见 package.json
 
@@ -29,8 +29,8 @@
 | dsh-bili-subagent | 0.8.7 | github.com/Yuuyuko-uu/dsh-bili-subagent |
 | dsh-qq-bridge | 1.4.0 | github.com/Yuuyuko-uu/dsh-qq-bridge |
 | dsh-pet | 0.3.8 | github.com/PC2005-cloud/dsh-pet |
-| dsh-feiyu-app | 0.1.0 | 本地 link: C:/Users/敖震宇/feiyu/plugin |
-| surfcore | 0.7.10 | 本地 link: C:/Users/敖震宇/.dsh/plugins/surfcore |
+| dsh-feiyu-app | 0.1.0 | 本地 link: C:/Users/<user>/feiyu/plugin |
+| surfcore | 0.7.10 | 本地 link: C:/Users/<user>/.dsh/plugins/surfcore |
 | dshmarket | 1.66.47 | github.com/dsh-market/dsh-market |
 | dsh-context | 0.73.3 | github.com/bowenliang123/dsh-context |
 | dsh-cost-meter | 1.9.22 | github.com/Han-1413141/dsh-cost-meter |
@@ -82,7 +82,7 @@
 star 数：dsh-pet 60、voice-mode 25、dsh-talk 18、auto-memory 179、aura-scheduler 4、dsh-clinic 0、dsh-Go 5559。
 
 ## 6. 网络与工具约束（重要）
-- 本机 **npm 不在 PATH** 上；pnpm 在 "C:\Users\敖震宇\AppData\Local\Programs\DeepSeek Harness\resources\runtime\primary-runtime\dependencies\pnpm"
+- 本机 **npm 不在 PATH** 上；pnpm 在 "C:\Users\<user>\AppData\Local\Programs\DeepSeek Harness\resources\runtime\primary-runtime\dependencies\pnpm"
 - `git clone` 极慢/会超时；`codeload.github.com` 的 tarball 下载约 30KB/s，十几 MB 的会很久
 - **推荐**：用 `gh api "repos/OWNER/REPO/contents/<path>" --jq .content` 或 `fetch https://raw.githubusercontent.com/OWNER/REPO/<SHA>/<path>`（后者 1-3 秒/文件，最稳）
 - 已下载的完整文件清单在：_research/trees/<owner>__<repo>.txt（每行一个 blob 路径）

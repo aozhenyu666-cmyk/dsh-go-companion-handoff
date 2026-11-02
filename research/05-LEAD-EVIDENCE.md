@@ -43,7 +43,7 @@ GET http://127.0.0.1:57009/feiyu/debug?sid=dd762176-bbe0-42e2-90ab-c45528aa2c30
 （注：feiyu-app 自己的 `找agent` 用 `ctx.agents.get` 所以报"取不到"，是它自己的判定逻辑保守，不代表 resolveAgent 失败。）
 
 ## E-05 dsh-feiyu-app 是"手机端"最现成的接入点（已在跑）
-文件：`C:\Users\敖震宇\feiyu\plugin\index.mjs`（8730 字节，本机 link 安装，不是 npm 包）
+文件：`C:\Users\<user>\feiyu\plugin\index.mjs`（8730 字节，本机 link 安装，不是 npm 包）
 ```
 export const inject = ['webServer']
 GET  /feiyu/ping      → { ok, 版本 }

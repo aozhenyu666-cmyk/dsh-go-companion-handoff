@@ -27,7 +27,7 @@
 | 3 | dsh-speak-up | **0.2.7** | Yuuyuko-uu/dsh-speak-up | `speak-up` | 无声明 | **NOT_TESTED** | **总开关=false**；且源码只用 `agents.get()`，**无法唤醒冷会话**（见 §5） |
 | 4 | dsh-bili-subagent | **0.8.7** | Yuuyuko-uu/dsh-bili-subagent | `bili-subagent` | `dsh>=0.1.7-rc.1, node>=22` ✅ | **NOT_TESTED** | 工具已注册（bili_* 系列可见）；未实测抓取 |
 | 5 | dsh-qq-bridge | **1.4.0** | Yuuyuko-uu/dsh-qq-bridge | `qq-bridge` | `dshReleases: {0.2.1-rc.3: compatible}` ⚠️**与当前 0.2.1-rc.2 对不上** | **FAIL（当前离线）** | NapCat `127.0.0.1:3000` 连接被拒；配置总开关=true 但基础设施没起 |
-| 6 | dsh-feiyu-app | **0.1.0** | **本地** `C:\Users\敖震宇\feiyu\plugin`（link） | `feiyu-app` | 无声明 | **PASS** | `/feiyu/ping` 实测 200；但**无鉴权、CORS=***，历史只在内存 |
+| 6 | dsh-feiyu-app | **0.1.0** | **本地** `C:\Users\<user>\feiyu\plugin`（link） | `feiyu-app` | 无声明 | **PASS** | `/feiyu/ping` 实测 200；但**无鉴权、CORS=***，历史只在内存 |
 
 ### 1.2 桌宠 / 视觉
 

@@ -54,7 +54,7 @@
 
 **大肥鱼现在不是"功能不够"，是"三条主链路都断在同一个点上"。**
 
-`session-429facb2-ccc8-49dc-b99d-cf44d77d8dca` —— 这个被 feiyu-mood、speak-up、qq-bridge 三方同时指着的「大肥鱼主会话」——**没有活着的 agent**。
+`session-429facb2-****` —— 这个被 feiyu-mood、speak-up、qq-bridge 三方同时指着的「大肥鱼主会话」——**没有活着的 agent**。
 
 - 情绪判定挂在它的 `agent/turn-stopping` 上 → 没有回合 → **最后一次真实情绪变化是 2026-10-30T06:12（3.5 天前）**
 - 主动发言指着它 → `agents.get()` 返回 undefined → **按设计不唤醒**，一轮都不做
@@ -108,7 +108,7 @@
 | schemastery | 3.18.5 | 同上 |
 | 宿主协议版本 | `hostProtocolVersion: 4` | `desktop-runtime.json` |
 | 平台 | win32 x64 | — |
-| DSH 用户目录 | `C:\Users\敖震宇\.dsh` | — |
+| DSH 用户目录 | `C:\Users\<user>\.dsh` | — |
 | Web GUI | `http://127.0.0.1:57009`（根路径 401，要凭据） | 实测 |
 
 > ⚠️ **工具链缺口（影响所有验收）**：本机没有 `npm` / `pnpm` / `npx` / `adb` 在 PATH。
@@ -136,7 +136,7 @@
 | dsh-speak-up | **0.2.7** | `speak-up` | Yuuyuko-uu/dsh-speak-up |
 | dsh-bili-subagent | **0.8.7** | `bili-subagent` | Yuuyuko-uu/dsh-bili-subagent |
 | dsh-qq-bridge | **1.4.0** | `qq-bridge` | Yuuyuko-uu/dsh-qq-bridge |
-| dsh-feiyu-app | **0.1.0** | `feiyu-app` | **本地** `C:\Users\敖震宇\feiyu\plugin`（link） |
+| dsh-feiyu-app | **0.1.0** | `feiyu-app` | **本地** `C:\Users\<user>\feiyu\plugin`（link） |
 | surfcore | **0.7.10** | `surfcore`（3 个 patch） | **本地** `~/.dsh/plugins/surfcore`（link） |
 
 > **更正一个历史记录错误**：任务书里写的 `dsh-qq-link` **不存在**。真实包名是 `dsh-qq-bridge@1.4.0`。
@@ -218,7 +218,7 @@ dsh-experimental-agent-profile
 ### 3.3 三条链路的共同断点（**本次审计最重要的发现**）
 
 ```
-session-429facb2-ccc8-49dc-b99d-cf44d77d8dca   ← 三方同时指向的「大肥鱼主会话」
+session-429facb2-****   ← 三方同时指向的「大肥鱼主会话」
         │
         ├── feiyu-mood  config.slots[0].sessions = [这个会话]
         │      → 判定钩子挂在它的 agent 上（agent/turn-stopping）
@@ -691,7 +691,7 @@ GET http://127.0.0.1:57009/feiyu/debug?sid=429facb2-ccc8-49dc-b99d-cf44d77d8dca
 
 **必须澄清**：`唤醒: "取不到可用 agent"` 这个标签是 **feiyu-app 自己的判定 bug**，不是 resolveAgent 失败。
 
-读 `C:\Users\敖震宇\feiyu\plugin\index.mjs` 的 `/feiyu/debug` 代码：
+读 `C:\Users\<user>\feiyu\plugin\index.mjs` 的 `/feiyu/debug` 代码：
 
 ```js
 形状 = r === null ? 'null' : typeof r + ' :: ' + Object.keys(r || {}).slice(0, 12).join(',')
@@ -1334,7 +1334,7 @@ node <clinic>/doctor.mjs --repo <插件绝对路径> --no-smoke --only R,K,X
 ### 18.1 前置（本机电脑侧，一次性）
 
 1. 确认电脑上的 DSH 是 **0.2.1-rc.2**，Cordis **4.0.5**（本文 §2.1 已核）。
-2. 备份目录已生成：`C:\Users\敖震宇\.dsh\backups\dsh-ecosystem-audit-2026-11-02T2230\`（12 个配置文件 + 2 个记忆数据文件，带 SHA256 清单）。
+2. 备份目录已生成：`C:\Users\<user>\.dsh\backups\dsh-ecosystem-audit-2026-11-02T2230\`（12 个配置文件 + 2 个记忆数据文件，带 SHA256 清单）。
 3. 若要做语音测试，先在电脑上装 `dsh-voice-mode` 到 **abtest-zseven** profile，**不要装到 desktop**。
 
 ### 18.2 手机侧（按顺序做，每步记录结果）
